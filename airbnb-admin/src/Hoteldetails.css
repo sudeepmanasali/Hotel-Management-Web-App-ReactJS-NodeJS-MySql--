@@ -1,0 +1,45 @@
+.profile{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:20px 330px;
+    border:1px solid lightgrey;
+    padding:10px 30px;
+}
+.profile h4{
+    width:100%;
+    padding-bottom:20px;
+    Position:relative;
+    border-bottom:1px solid lightgrey;
+    margin-bottom:20px;
+    margin-top:20px;
+    font-size:18px;
+
+
+}
+
+.button{
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 15px 220px;
+    text-align: center;
+    font-weight: 800;
+    background-color: #FF3F6C;
+    margin: 30px 24px;
+    color: white;
+    outline:none;
+    border:none;
+    border-radius: 2px;
+}
+table{
+    margin-bottom:10px;
+}
+table td{
+   width:200px;
+   float:left;
+   padding:08px 10px;
+   font-size:14px;
+   color:gray;
+   font-weight:400;
+
+}
