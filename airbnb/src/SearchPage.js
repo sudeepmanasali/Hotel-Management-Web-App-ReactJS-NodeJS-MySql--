@@ -1,11 +1,9 @@
-import { Button } from '@material-ui/core'
+
 import React,{useState,useEffect} from 'react'
 import "./SearchPage.css"
 import SearchResult from './SearchResult'
 import axios from "axios"
-import {BiSearchAlt2} from "react-icons/bi"
-import Chip from '@material-ui/core/Chip';
- import {MdCancel} from "react-icons/md"
+
 import { useParams } from 'react-router-dom'
 
 import { useStateValue } from './StateProvider';
@@ -13,7 +11,7 @@ import { useStateValue } from './StateProvider';
 function SearchPage() {
     
   var [details,setDetails] = useState([]);
-  const [{user_details}, dispatch] = useStateValue();
+  const [{user_details}] = useStateValue();
     
     var [hotelRooms,setRooms] = useState([]);
     var [hoteldetails,setHotelDetails] = useState({});
@@ -31,7 +29,7 @@ function SearchPage() {
         let temp=[]
         for(let i=0;i<filter_category.length;i++){
           hotelRooms.map((item)=>{
-            if(item.facility == filter_category[i])
+            if(item.facility === filter_category[i])
               {
                       temp.push(item);
               }
@@ -40,7 +38,7 @@ function SearchPage() {
 
         for(let i=0;i<filter_category.length;i++){
           hotelRooms.map((item)=>{
-            if(item.type_name == filter_category[i])
+            if(item.type_name === filter_category[i])
               {
                       temp.push(item);
               }
@@ -50,7 +48,7 @@ function SearchPage() {
           
           setRooms(temp);
       }
-      else if(filter_category.length==0){
+      else if(filter_category.length===0){
          setRooms(details)
       }
       
@@ -83,53 +81,60 @@ function SearchPage() {
     var hotel="http://localhost:8000/hotel/details";
 
     useEffect(()=>{
-      async function fetchHotel(){
-              var request = await axios.get(hotel);
-             
-            //  console.log(request.data);
-            setHotelDetails(request.data)
-          }
-         
 
-          fetchHotel();
+
+          axios.get(hotel)
+          .then(res=>{
+            
+            setHotelDetails(res.data)
+          })
+          .catch((err)=>{
+            alert(err);
+          })
   },[hotel])
 
-
-  console.log(hoteldetails)
 
 
 
 
     useEffect(()=>{
-        async function fetchRooms(){
-                var request = await axios.get(rooms);
-               setRooms(request.data)
-          // var details_rooms = request.data
+   
 
-
-
-              setDetails(request.data)
-            }
-           
-
-            fetchRooms();
+            axios.get(rooms)
+            .then(res=>{
+              setRooms(res.data);
+              setDetails(res.data);
+            })
+            .catch((err)=>{
+              alert(err);
+            })
 
 
     },[rooms])
 
     useEffect(()=>{
-        async function fetchAminities(){
-                var request = await axios.get(aminitiesUrl);
-               setAminities(request.data)}
-            fetchAminities();
+
+            axios.get(aminitiesUrl)
+            .then(res=>{
+              
+              setAminities(res.data)
+            })
+            .catch((err)=>{
+              alert(err);
+            })
     },[aminitiesUrl])
 
 
     useEffect(()=>{
-        async function fetchTypes(){
-                var request = await axios.get(typesUrl);
-               setTypes(request.data)}
-            fetchTypes();
+             axios.get(typesUrl)
+            .then(res=>{
+              
+              setTypes(res.data)
+            })
+            .catch((err)=>{
+              alert(err);
+            })
+            
     },[typesUrl])
     
  
@@ -138,7 +143,7 @@ function SearchPage() {
 
     var add_filter = (e)=>{
          
-         if(e.target.checked == true){
+         if(e.target.checked === true){
              if(filter_category.indexOf(e.target.id)<0){
                setFilter([...filter_category,e.target.id]);
              }
@@ -159,7 +164,6 @@ function SearchPage() {
     }
 
 
-    console.log(hotelRooms.length);
     return (
         <div className="searchPage">
             <div className="searchPage_info">
@@ -175,15 +179,10 @@ function SearchPage() {
                 <span className="chip">
                     {fil} 
                    
-                    </span>
-                
-               
-                
-
-               ))
+                    </span> ))
                
            }
-           {      console.log(filter_category) }
+    
            </div>
      
                  
@@ -198,8 +197,13 @@ function SearchPage() {
                    <button className="name2" onClick={()=>{
                        setFilter([])
                        setRooms(details);
-                    //  document.getElementByClassName('checkbox').checked=false;
-                       console.log(details)
+                       const d = document.querySelectorAll("input");
+                       
+                       let z=0
+                       for(z=0;z<d.length;z++){
+                          d[z].checked = false;
+                       }
+                  
                    }}>
                       CLEAR ALL
                    </button>

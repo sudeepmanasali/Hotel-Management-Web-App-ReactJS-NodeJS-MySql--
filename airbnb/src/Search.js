@@ -7,7 +7,7 @@ import PeopleIcon from "@material-ui/icons/People"
 import { Button } from '@material-ui/core';
 import {useHistory} from "react-router-dom"
 
-//DATE PICKER COMPONENT
+
 
 function Search() {
     const history=useHistory()
@@ -26,12 +26,11 @@ function Search() {
     function handleSelect(ranges){
     setStartDate(ranges.selection.startDate);
     setEndDate(ranges.selection.endDate);
-    console.log(ranges)
+ 
 
     }
 
     function handleInput(e){
-        console.log(e.target.value)
         setInput(e.target.value);
     }
 

@@ -79,3 +79,19 @@
     font-weight:600;
 
 }
+
+
+@media screen and (max-width:1040px){
+    .header_center{
+        display: none;
+    }
+
+    .header_right{
+        width:240px;
+        margin-right: 10px;
+    }
+
+    .item{
+        justify-content: space-around;
+    }
+}

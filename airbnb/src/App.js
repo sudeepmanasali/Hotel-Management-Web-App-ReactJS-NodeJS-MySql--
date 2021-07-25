@@ -1,87 +1,55 @@
-import React from 'react';
-import Footer from './Footer';
-import Header from './Header';
-import Home from './Home';
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
-import SearchPage from './SearchPage';
-import Profile from "./Profile"
+import React,{Suspense} from 'react';
+import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom"
 
+import Fallback from './Fallback';
 import Login from "./Login"
+import "./AdminRegister.css"
 import Rsgister from "./Rsgister"
 
-import Bookings from "./Bookings";
-import { useStateValue } from './StateProvider';
-import Edituser from './Edituser';
+
+import { useStateValue } from './StateProvider'
+const Footer = React.lazy(()=>import('./Footer'));
+const Header = React.lazy(()=>import('./Header'));
+const Home = React.lazy(()=>import('./Home'));
+const SearchPage = React.lazy(()=>import('./SearchPage'));
+const Profile = React.lazy(()=>import('./Profile'));
+const Bookings = React.lazy(()=>import('./Bookings'));
+const Edituser = React.lazy(()=>import('./Edituser'));
 
 function App() {
-  const [{user,admin}, dispatch] = useStateValue();
+  const [{isAuth}, dispatch] = useStateValue();
 
-  console.log(user);
+
+
+
   return (
     <div className="app">
 
-   {!user ? (
-          
-                
-                  <Login />
-
-          
-          ):(
-    <Router>
-
    
+      <Router>
+  
+      
+            
         <Switch>
+              <Suspense fallback={<Fallback />} >
+
+              <Route path="/search/:startdate/:enddate/:persons">   
+              <div><Header /><SearchPage />      <Footer /></div> </Route>
+              <Route path="/edituser">     
+              {isAuth ? ( <div><Header /><Edituser /><Footer /></div>) : ( <Redirect to="login" />) }</Route> 
+              <Route path="/login">       <Login /></Route>
+              <Route path="/user_register"><Rsgister /></Route>
+              <Route path="/profile">{isAuth ? ( <div><Header /><Profile />      <Footer /></div>) : ( <Redirect to="login" />) }</Route>
+              <Route path="/bookings">{isAuth ? ( <div><Header /><Bookings />       <Footer /></div>) : ( <Redirect to="login" />) }</Route>
+              <Route path="/" exact><Header />       <Home />      <Footer /></Route>
         
-          <Route path="/search/:startdate/:enddate/:persons">
-            <Header />
-              <SearchPage />
-            <Footer />    
-          </Route>
+     
+       </Suspense>
 
-
-          <Route path="/edituser">
-            <Header />
-              <Edituser />
-            <Footer />    
-          </Route>
-          
-      
-
-          <Route path="/login">
-            <Header />
-              <Login />
-            <Footer />    
-          </Route>
-
-          <Route path="/user_register">
-            <Header />
-              <Rsgister />
-            <Footer />    
-          </Route>
-
-
-          <Route path="/profile">
-            <Header />
-              <Profile />
-            <Footer />    
-          </Route>
-          <Route path="/bookings">
-            <Header />
-              <Bookings />
-            <Footer />    
-          </Route>
-        
-          <Route path="/">
-            <Header />
-             <Home />
-            <Footer /> 
-          </Route>
         </Switch>
-      
-    </Router>)
-}
+    </Router>
     
-    
+
     </div>
   );
 }

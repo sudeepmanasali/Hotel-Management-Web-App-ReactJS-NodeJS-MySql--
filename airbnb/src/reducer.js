@@ -1,7 +1,10 @@
-export const initialState = {
-    user:null,
 
-    user_details:{}
+export const initialState = {
+    
+    user:localStorage.getItem('userId'),
+    token:localStorage.getItem("token"),
+    user_details:JSON.parse(localStorage.getItem("details")),
+    isAuth : localStorage.getItem('isAuth')
 }
 
 export const actionTypes = {
@@ -11,17 +14,20 @@ export const actionTypes = {
 };
 
 const reducer = (state, action) => {
-    console.log(action);
+  
     switch (action.type) {
         case actionTypes.SET_USER:
             return{
                 ...state,
                 user:action.user,
+                token:action.token,
+                isAuth:action.isAuth
             };
             case actionTypes.LOGOUT:
                 return{
                     ...state,
                     user:null,
+                    isAuth:false
                 };    
          
         case actionTypes.USER_INFO:

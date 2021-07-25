@@ -1,34 +1,13 @@
-// import { Card } from '@material-ui/core'
-import React , {useEffect,useState} from 'react'
+
+import React from 'react'
 import Banner from './Banner'
 import "./Home.css"
 import Card from "./Card"
-import axios from "axios"
-// rfce is a ES7 code snippet
+
 function Home() {
-
-    var fetchUrl = "http://localhost:8000/customers";
-
-    useEffect(()=>{
-        
-        async function fetchData(){
-        //     var request = await axios.get(fetchUrl);
-  
-     
-        //    console.log(request.data)
-        //  return request
-
-        // const res = await axios.delete('http://localhost:8000/customer/delete', { data: { id : 3 } });
-
-        // console.log(res.data.json);
-        
-      }
-        fetchData();
-      },[fetchUrl]);
-
     return (
         <div className="home">
-            {/* <h1>HOme</h1> */}
+       
             <Banner />
             <div className='home_section'>
             <Card
@@ -72,4 +51,4 @@ function Home() {
     )
 }
 
-export default Home
+export default React.memo(Home)

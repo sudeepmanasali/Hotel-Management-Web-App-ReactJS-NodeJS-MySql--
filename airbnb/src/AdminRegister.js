@@ -1,6 +1,5 @@
 import React from 'react'
 import "./AdminRegister.css"
-import {FaHotel,FaBed} from "react-icons/fa"
 import {BsFillPersonLinesFill} from "react-icons/bs"
 
 import {MdEmail} from "react-icons/md"
@@ -11,9 +10,9 @@ import {RiLockPasswordFill} from "react-icons/ri"
 
 function AdminRegister() {
     return (
-        <div  className="container">
+        <div  className="box" style={{display:"flex",flexDirection:"column"}}>
               
- <div className="container-fluid">   
+ <div className="box-fluid">   
 	<form >
 <h2 style={{textAlign:"center",fontSize:"16px",borderBottom:"2px sollid lightgrey",marginBottom:"10px"}}>Register ADMIN</h2>
 

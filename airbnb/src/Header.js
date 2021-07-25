@@ -1,35 +1,26 @@
 import React from 'react'
 import "./Header.css"
 import { HiUser , HiOutlineShoppingBag} from 'react-icons/hi';
-import { BsBookmarksFill} from 'react-icons/bs';
+
 import { FaHome } from 'react-icons/fa';
 
-import {AiOutlineLogout, AiTwotoneAccountBook} from "react-icons/ai"
-
+import {AiOutlineLogout} from "react-icons/ai"
 import SearchIcon from '@material-ui/icons/Search';
-import { Avatar } from '@material-ui/core';
-import  ExpandMore  from '@material-ui/icons/ExpandMore';
-import  LanguageIcon  from '@material-ui/icons/Language';
-import {Link} from "react-router-dom"
+
+import {Link, useHistory} from "react-router-dom"
 import { useStateValue } from './StateProvider';
 import { actionTypes } from './reducer'
 
 
-import {useHistory} from "react-router-dom"
 function Header() {
     const [{user}, dispatch] = useStateValue();
-
-    var history = useHistory();
- 
+    const history = useHistory();
     var logout = ()=>{
+        localStorage.clear();
         dispatch({
             type:actionTypes.LOGOUT,
         })
     }
-        
- 
-
-    
 
     return (
         <div className="header">
@@ -58,10 +49,10 @@ function Header() {
               </div>
 
               
-              <div className="item" onClick={logout}>
+              <div className="item" >
                   <AiOutlineLogout style={{fontSize:"16px",color:"grey",marginBottom:"5px"}} />
                 
-                  <span className="icon_desc">Logout</span>
+                 {user ? <span onClick={logout} className="icon_desc">Logout</span> : <Link to="login">Login</Link>}
               </div>
             
             </div>
@@ -69,4 +60,4 @@ function Header() {
     )
 }
 
-export default Header
+export default React.memo(Header)

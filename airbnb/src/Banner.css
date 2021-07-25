@@ -35,9 +35,16 @@
     display:flex;
     flex-direction: column;
 }
+
 .button_searchButton{
     background-color:white !important; 
     font-weight:900 !important;
     color:#ff7779   !important;
     text-transform:inherit !important;
+}
+
+@media screen and (max-width:1000px){
+    .banner_info{
+        display: none;
+    }
 }

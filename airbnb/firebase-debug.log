@@ -1,0 +1,208 @@
+[debug] [2021-07-15T06:50:36.167Z] ----------------------------------------------------------------------
+[debug] [2021-07-15T06:50:36.170Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-07-15T06:50:36.171Z] CLI Version:   9.16.0
+[debug] [2021-07-15T06:50:36.171Z] Platform:      win32
+[debug] [2021-07-15T06:50:36.171Z] Node Version:  v14.17.1
+[debug] [2021-07-15T06:50:36.172Z] Time:          Thu Jul 15 2021 12:20:36 GMT+0530 (India Standard Time)
+[debug] [2021-07-15T06:50:36.173Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-15T06:50:36.192Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-15T06:50:36.192Z] > authorizing via signed-in user (sudeepmanasali@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  F:\java script\ReactJS\full stack -Airbnb\airbnb
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-07-15T06:51:19.869Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-07-15T06:51:20.813Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-07-15T06:51:20.814Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project hotelmanagement-fcc2e (Hotelmanagement) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[info] +  Wrote build/404.html 
+[debug] [2021-07-15T06:51:40.837Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2021-07-15T06:51:41.208Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2021-07-15T06:51:41.209Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"8.7.1","browserURL":"https://www.gstatic.com/firebasejs/8.7.1/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/8.7.1/firebase.tgz"},"live":{"version":"8.7","browserURL":"https://www.gstatic.com/firebasejs/live/8.7/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/8.7/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/8.7.1/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js","database":"https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js","firestore":"https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js","functions":"https://www.gstatic.com/firebasejs/8.7.1/firebase-functions.js","installations":"https://www.gstatic.com/firebasejs/8.7.1/firebase-installations.js","messaging":"https://www.gstatic.com/firebasejs/8.7.1/firebase-messaging.js","storage":"https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/8.7.1/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/8.7.1/firebase-remote-config.js","firestore.memory":"https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.memory.js"}}
+[info] i  Skipping write of build/index.html 
+[info] 
+[info] i  Detected a .git folder at F:\java script\ReactJS\full stack -Airbnb 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=603018830&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-07-15T06:51:53.606Z] >>> HTTP REQUEST POST https://github.com/login/oauth/access_token  
+ {"client_id":"89cf50f02ac6aaed3484","client_secret":"3330d14abc895d9a74d5f17cd7a00711fa2c5bf0","code":"58992164e2d22acc2a08","redirect_uri":"http://localhost:9005","state":"603018830"}
+[debug] [2021-07-15T06:51:54.615Z] <<< HTTP RESPONSE 200 {"server":"GitHub.com","date":"Thu, 15 Jul 2021 06:51:53 GMT","content-type":"application/json; charset=utf-8","transfer-encoding":"chunked","vary":"X-PJAX, Accept-Encoding, Accept, X-Requested-With","permissions-policy":"interest-cohort=()","etag":"W/\"fd395107de8695fab75936cd901e5938\"","cache-control":"max-age=0, private, must-revalidate","strict-transport-security":"max-age=31536000; includeSubdomains; preload","x-frame-options":"deny","x-content-type-options":"nosniff","x-xss-protection":"0","referrer-policy":"origin-when-cross-origin, strict-origin-when-cross-origin","expect-ct":"max-age=2592000, report-uri=\"https://api.github.com/_private/browser/errors\"","content-security-policy":"default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' uploads.github.com www.githubstatus.com collector.githubapp.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com cdn.optimizely.com logx.optimizely.com/v1/events translator.github.com wss://alive.github.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com; frame-ancestors 'none'; frame-src render.githubusercontent.com render-temp.githubusercontent.com viewscreen.githubusercontent.com; img-src 'self' data: github.githubassets.com identicons.github.com collector.githubapp.com github-cloud.s3.amazonaws.com secured-user-images.githubusercontent.com/ *.githubusercontent.com; manifest-src 'self'; media-src 'none'; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src github.com/socket-worker-3f088aa2.js gist.github.com/socket-worker-3f088aa2.js","x-github-request-id":"D0A6:5A41:5DDF81:6767DC:60EFDB08"}
+[debug] [2021-07-15T06:51:54.618Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2021-07-15T06:51:55.439Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2021-07-15T06:51:55.440Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"sudeepmanasali","id":49877928,"node_id":"MDQ6VXNlcjQ5ODc3OTI4","avatar_url":"https://avatars.githubusercontent.com/u/49877928?v=4","gravatar_id":"","url":"https://api.github.com/users/sudeepmanasali","html_url":"https://github.com/sudeepmanasali","followers_url":"https://api.github.com/users/sudeepmanasali/followers","following_url":"https://api.github.com/users/sudeepmanasali/following{/other_user}","gists_url":"https://api.github.com/users/sudeepmanasali/gists{/gist_id}","starred_url":"https://api.github.com/users/sudeepmanasali/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/sudeepmanasali/subscriptions","organizations_url":"https://api.github.com/users/sudeepmanasali/orgs","repos_url":"https://api.github.com/users/sudeepmanasali/repos","events_url":"https://api.github.com/users/sudeepmanasali/events{/privacy}","received_events_url":"https://api.github.com/users/sudeepmanasali/received_events","type":"User","site_admin":false,"name":"Sudeep Manasali","company":null,"blog":"","location":"Mysuru","email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":29,"public_gists":0,"followers":6,"following":4,"created_at":"2019-04-22T16:23:04Z","updated_at":"2021-07-15T06:03:27Z","private_gists":0,"total_private_repos":2,"owned_private_repos":2,"disk_usage":153846,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as sudeepmanasali 
+[info] 
+[debug] [2021-07-15T06:52:02.727Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-15T06:52:03.413Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-15T06:52:03.414Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-15T06:52:05.179Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-15T06:52:05.771Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-15T06:52:05.771Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-15T06:52:12.683Z] >>> [apiv2][query] GET https://api.github.com/repos/n/actions/secrets/public-key type=owner
+[debug] [2021-07-15T06:52:13.322Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-15T06:52:13.405Z] <<< [apiv2][status] GET https://api.github.com/repos/n/actions/secrets/public-key 404
+[debug] [2021-07-15T06:52:13.406Z] <<< [apiv2][body] GET https://api.github.com/repos/n/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-15T06:52:14.049Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-15T06:52:14.278Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-15T06:52:14.278Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-15T06:52:14.782Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-15T06:52:14.783Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-15T06:52:25.566Z] >>> [apiv2][query] GET https://api.github.com/repos/no/actions/secrets/public-key type=owner
+[debug] [2021-07-15T06:52:26.043Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-15T06:52:26.090Z] <<< [apiv2][status] GET https://api.github.com/repos/no/actions/secrets/public-key 404
+[debug] [2021-07-15T06:52:26.091Z] <<< [apiv2][body] GET https://api.github.com/repos/no/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-15T06:52:26.780Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-15T06:52:26.780Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-15T06:52:37.661Z] ----------------------------------------------------------------------
+[debug] [2021-07-15T06:52:37.664Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-07-15T06:52:37.664Z] CLI Version:   9.16.0
+[debug] [2021-07-15T06:52:37.664Z] Platform:      win32
+[debug] [2021-07-15T06:52:37.664Z] Node Version:  v14.17.1
+[debug] [2021-07-15T06:52:37.666Z] Time:          Thu Jul 15 2021 12:22:37 GMT+0530 (India Standard Time)
+[debug] [2021-07-15T06:52:37.666Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-15T06:52:37.681Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-15T06:52:37.681Z] > authorizing via signed-in user (sudeepmanasali@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  F:\java script\ReactJS\full stack -Airbnb\airbnb
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-07-15T06:52:50.295Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-07-15T06:52:51.355Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-07-15T06:52:51.356Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project hotelmanagement-fcc2e (Hotelmanagement) 
+[info] 
+=== Hosting:github Setup
+[info] 
+[info] i  Detected a .git folder at F:\java script\ReactJS\full stack -Airbnb 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=643609381&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-07-15T06:52:55.860Z] >>> HTTP REQUEST POST https://github.com/login/oauth/access_token  
+ {"client_id":"89cf50f02ac6aaed3484","client_secret":"3330d14abc895d9a74d5f17cd7a00711fa2c5bf0","code":"17c058a5e71bfd77befb","redirect_uri":"http://localhost:9005","state":"643609381"}
+[debug] [2021-07-15T06:52:56.686Z] <<< HTTP RESPONSE 200 {"server":"GitHub.com","date":"Thu, 15 Jul 2021 06:52:55 GMT","content-type":"application/json; charset=utf-8","transfer-encoding":"chunked","vary":"X-PJAX, Accept-Encoding, Accept, X-Requested-With","permissions-policy":"interest-cohort=()","etag":"W/\"212db80b026f4c70fc23cb90034f687e\"","cache-control":"max-age=0, private, must-revalidate","strict-transport-security":"max-age=31536000; includeSubdomains; preload","x-frame-options":"deny","x-content-type-options":"nosniff","x-xss-protection":"0","referrer-policy":"origin-when-cross-origin, strict-origin-when-cross-origin","expect-ct":"max-age=2592000, report-uri=\"https://api.github.com/_private/browser/errors\"","content-security-policy":"default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' uploads.github.com www.githubstatus.com collector.githubapp.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com cdn.optimizely.com logx.optimizely.com/v1/events translator.github.com wss://alive.github.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com; frame-ancestors 'none'; frame-src render.githubusercontent.com render-temp.githubusercontent.com viewscreen.githubusercontent.com; img-src 'self' data: github.githubassets.com identicons.github.com collector.githubapp.com github-cloud.s3.amazonaws.com secured-user-images.githubusercontent.com/ *.githubusercontent.com; manifest-src 'self'; media-src 'none'; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src github.com/socket-worker-3f088aa2.js gist.github.com/socket-worker-3f088aa2.js","x-github-request-id":"D8FB:1672:F9FE7:13E65D:60EFDB46"}
+[debug] [2021-07-15T06:52:56.693Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2021-07-15T06:52:57.701Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2021-07-15T06:52:57.702Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"sudeepmanasali","id":49877928,"node_id":"MDQ6VXNlcjQ5ODc3OTI4","avatar_url":"https://avatars.githubusercontent.com/u/49877928?v=4","gravatar_id":"","url":"https://api.github.com/users/sudeepmanasali","html_url":"https://github.com/sudeepmanasali","followers_url":"https://api.github.com/users/sudeepmanasali/followers","following_url":"https://api.github.com/users/sudeepmanasali/following{/other_user}","gists_url":"https://api.github.com/users/sudeepmanasali/gists{/gist_id}","starred_url":"https://api.github.com/users/sudeepmanasali/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/sudeepmanasali/subscriptions","organizations_url":"https://api.github.com/users/sudeepmanasali/orgs","repos_url":"https://api.github.com/users/sudeepmanasali/repos","events_url":"https://api.github.com/users/sudeepmanasali/events{/privacy}","received_events_url":"https://api.github.com/users/sudeepmanasali/received_events","type":"User","site_admin":false,"name":"Sudeep Manasali","company":null,"blog":"","location":"Mysuru","email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":29,"public_gists":0,"followers":6,"following":4,"created_at":"2019-04-22T16:23:04Z","updated_at":"2021-07-15T06:03:27Z","private_gists":0,"total_private_repos":2,"owned_private_repos":2,"disk_usage":153846,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as sudeepmanasali 
+[info] 
+[debug] [2021-07-15T06:53:20.979Z] >>> [apiv2][query] GET https://api.github.com/repos/Hotel Manageent/actions/secrets/public-key type=owner
+[debug] [2021-07-15T06:53:21.763Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-15T06:53:21.765Z] <<< [apiv2][status] GET https://api.github.com/repos/Hotel Manageent/actions/secrets/public-key 404
+[debug] [2021-07-15T06:53:21.765Z] <<< [apiv2][body] GET https://api.github.com/repos/Hotel Manageent/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-15T06:53:22.261Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-15T06:53:22.262Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-15T06:53:22.823Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-15T06:53:23.498Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-15T06:53:23.498Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-15T06:53:51.950Z] ----------------------------------------------------------------------
+[debug] [2021-07-15T06:53:51.952Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-07-15T06:53:51.952Z] CLI Version:   9.16.0
+[debug] [2021-07-15T06:53:51.952Z] Platform:      win32
+[debug] [2021-07-15T06:53:51.953Z] Node Version:  v14.17.1
+[debug] [2021-07-15T06:53:51.954Z] Time:          Thu Jul 15 2021 12:23:51 GMT+0530 (India Standard Time)
+[debug] [2021-07-15T06:53:51.954Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-15T06:53:51.968Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-15T06:53:51.969Z] > authorizing via signed-in user (sudeepmanasali@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  F:\java script\ReactJS\full stack -Airbnb\airbnb
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-07-15T06:54:11.047Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-07-15T06:54:12.265Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-07-15T06:54:12.265Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project hotelmanagement-fcc2e (Hotelmanagement) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2021-07-15T06:54:23.837Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2021-07-15T06:54:24.307Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2021-07-15T06:54:24.308Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"8.7.1","browserURL":"https://www.gstatic.com/firebasejs/8.7.1/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/8.7.1/firebase.tgz"},"live":{"version":"8.7","browserURL":"https://www.gstatic.com/firebasejs/live/8.7/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/8.7/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/8.7.1/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js","database":"https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js","firestore":"https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js","functions":"https://www.gstatic.com/firebasejs/8.7.1/firebase-functions.js","installations":"https://www.gstatic.com/firebasejs/8.7.1/firebase-installations.js","messaging":"https://www.gstatic.com/firebasejs/8.7.1/firebase-messaging.js","storage":"https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/8.7.1/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/8.7.1/firebase-remote-config.js","firestore.memory":"https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.memory.js"}}
+[info] +  Wrote y/index.html 
+[info] 
+[info] i  Detected a .git folder at F:\java script\ReactJS\full stack -Airbnb 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=434943419&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-07-15T06:54:26.392Z] >>> HTTP REQUEST POST https://github.com/login/oauth/access_token  
+ {"client_id":"89cf50f02ac6aaed3484","client_secret":"3330d14abc895d9a74d5f17cd7a00711fa2c5bf0","code":"d0aa5d04522a8b9e2857","redirect_uri":"http://localhost:9005","state":"434943419"}
+[debug] [2021-07-15T06:54:27.201Z] <<< HTTP RESPONSE 200 {"server":"GitHub.com","date":"Thu, 15 Jul 2021 06:54:25 GMT","content-type":"application/json; charset=utf-8","transfer-encoding":"chunked","vary":"X-PJAX, Accept-Encoding, Accept, X-Requested-With","permissions-policy":"interest-cohort=()","etag":"W/\"b8cac4e9fde81d09598083eaf09e9949\"","cache-control":"max-age=0, private, must-revalidate","strict-transport-security":"max-age=31536000; includeSubdomains; preload","x-frame-options":"deny","x-content-type-options":"nosniff","x-xss-protection":"0","referrer-policy":"origin-when-cross-origin, strict-origin-when-cross-origin","expect-ct":"max-age=2592000, report-uri=\"https://api.github.com/_private/browser/errors\"","content-security-policy":"default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' uploads.github.com www.githubstatus.com collector.githubapp.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com cdn.optimizely.com logx.optimizely.com/v1/events translator.github.com wss://alive.github.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com; frame-ancestors 'none'; frame-src render.githubusercontent.com render-temp.githubusercontent.com viewscreen.githubusercontent.com; img-src 'self' data: github.githubassets.com identicons.github.com collector.githubapp.com github-cloud.s3.amazonaws.com secured-user-images.githubusercontent.com/ *.githubusercontent.com; manifest-src 'self'; media-src 'none'; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src github.com/socket-worker-3f088aa2.js gist.github.com/socket-worker-3f088aa2.js","x-github-request-id":"EBB5:524B:2ADA14:343383:60EFDBA1"}
+[debug] [2021-07-15T06:54:27.209Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2021-07-15T06:54:28.217Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2021-07-15T06:54:28.218Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"sudeepmanasali","id":49877928,"node_id":"MDQ6VXNlcjQ5ODc3OTI4","avatar_url":"https://avatars.githubusercontent.com/u/49877928?v=4","gravatar_id":"","url":"https://api.github.com/users/sudeepmanasali","html_url":"https://github.com/sudeepmanasali","followers_url":"https://api.github.com/users/sudeepmanasali/followers","following_url":"https://api.github.com/users/sudeepmanasali/following{/other_user}","gists_url":"https://api.github.com/users/sudeepmanasali/gists{/gist_id}","starred_url":"https://api.github.com/users/sudeepmanasali/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/sudeepmanasali/subscriptions","organizations_url":"https://api.github.com/users/sudeepmanasali/orgs","repos_url":"https://api.github.com/users/sudeepmanasali/repos","events_url":"https://api.github.com/users/sudeepmanasali/events{/privacy}","received_events_url":"https://api.github.com/users/sudeepmanasali/received_events","type":"User","site_admin":false,"name":"Sudeep Manasali","company":null,"blog":"","location":"Mysuru","email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":29,"public_gists":0,"followers":6,"following":4,"created_at":"2019-04-22T16:23:04Z","updated_at":"2021-07-15T06:03:27Z","private_gists":0,"total_private_repos":2,"owned_private_repos":2,"disk_usage":153846,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as sudeepmanasali 
+[info] 
+[debug] [2021-07-15T06:54:42.766Z] >>> [apiv2][query] GET https://api.github.com/repos/f/actions/secrets/public-key type=owner
+[debug] [2021-07-15T06:54:43.293Z] <<< [apiv2][status] GET https://api.github.com/repos/f/actions/secrets/public-key 404
+[debug] [2021-07-15T06:54:43.294Z] <<< [apiv2][body] GET https://api.github.com/repos/f/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-15T06:54:44.056Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-15T06:54:44.620Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-15T06:54:44.620Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}

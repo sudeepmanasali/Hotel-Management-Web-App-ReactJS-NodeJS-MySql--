@@ -37,3 +37,9 @@
       margin-top: 8px;
       margin-bottom: 8px;
     }
+
+@media screen and (max-width:1000px){
+  .card{
+    margin:5px;
+  }
+}    

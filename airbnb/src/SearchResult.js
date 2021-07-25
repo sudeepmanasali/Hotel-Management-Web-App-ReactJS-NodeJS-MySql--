@@ -1,6 +1,6 @@
 import React from 'react';
 import "./SearchResult.css";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder"
+
 import StarIcon from "@material-ui/icons/Star"
 import { BsBookmarksFill,BsWifi} from 'react-icons/bs';
 import {FaRupeeSign, FaParking} from "react-icons/fa"
@@ -11,11 +11,11 @@ import {GiFirstAidKit} from "react-icons/gi"
 import {MdFreeBreakfast} from "react-icons/md"
 
 import "react-icons/fa"
-import { BiWindows } from 'react-icons/bi';
+
 import axios from "axios"
 import { useHistory } from 'react-router-dom';
-// import {IconContext} from "react-icons"
 
+import { useStateValue } from './StateProvider';
 function SearchResult({
     img,
     location,
@@ -31,7 +31,8 @@ function SearchResult({
 
 }) {
 
-   
+    const [{token}] = useStateValue();
+    
 var history = useHistory()
   
 
@@ -57,18 +58,27 @@ var history = useHistory()
         
       if(res){
 
-        var request = axios.post("http://localhost:8000/reservation",{
-            "roomId":parseInt(e.target.id),
+        axios.post("http://localhost:8000/reservation",{
+            data:{"roomId":parseInt(e.target.id),
             "custId":custId,
             "bookingDate":today,
             "startDate":formatDate(startDate),
             "endDate":formatDate(endDate),
-            "amount":price
+            "amount":price}
+        },{headers:{
+            Authorization:"Bearer "+token
+        }})
+        .then(result=>{
+            
+            alert(result.data)
+
+            history.push("/")
+            
+        })
+        .catch(err=>{
+            alert(err);
         })
 
-        alert("Reserved Succesfully")
-        history.push("/")
-        console.log(request.data);
       }
       else{
           console.log("Booking Cancelled !!!")
@@ -89,13 +99,13 @@ var history = useHistory()
                    <p>{location}</p>
                    <br></br>
                    <div className="amenities">
-                   {description=='WI-FI' ? <span className="elements"><BsWifi /> WI-FI</span>: " "  } 
-                   {description=='Refrigarator' ? <span className="elements"><CgSmartHomeRefrigerator /> Refrigarator</span>: " "  } 
+                   {description==='WI-FI' ? <span className="elements"><BsWifi /> WI-FI</span>: " "  } 
+                   {description==='Refrigarator' ? <span className="elements"><CgSmartHomeRefrigerator /> Refrigarator</span>: " "  } 
 
-                   {description=='Breakfast' ? <span className="elements"><MdFreeBreakfast /> Breakfast</span>: " "  } 
+                   {description==='Breakfast' ? <span className="elements"><MdFreeBreakfast /> Breakfast</span>: " "  } 
 
                
-                   {description!='WI-FI' &&  description!='Breakfast' && description!='Refrigarator'? <span className="elements">{description}</span>: " "  } 
+                   {description!=='WI-FI' &&  description!='Breakfast' && description!='Refrigarator'? <span className="elements">{description}</span>: " "  } 
 
             
                    

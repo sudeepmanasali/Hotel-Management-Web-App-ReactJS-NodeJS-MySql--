@@ -18,9 +18,7 @@ function Profile() {
     
     var [edit_name,setEditName]=useState(user_details.cust_name);
     var [edit_phone,setEditPhone]=useState(user_details.cust_phone);
-          
 
-    console.log(user_details)
     useEffect(()=>{
         async function fetchCustomer(){
                 var request = await axios.get(customerUrl);
@@ -37,16 +35,21 @@ function Profile() {
 
      async function edit(){
         setDisable(!disable);
-        var request = await axios.post(editUrl,{
-        
-            "username":edit_name,
-            "useremail":edit_email,
-            "phone":edit_phone,
-            "password":edit_password,
-            "custid":user_details.cust_id
+        axios.post(editUrl,{
+            headers:{
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + this.props.token
+            },
+            body : JSON.stringify({    "username":edit_name,
+                "useremail":edit_email,
+                "phone":edit_phone,
+                "password":edit_password,
+                "custid":user_details.cust_id}),
 
-          
-        });
+
+        }).then(res=>{
+            alert(res)
+        }).catch(err=>{alert(err);});
 
     }
     return (

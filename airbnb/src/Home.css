@@ -1,4 +1,17 @@
 .home_section{
-    display:flex;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
     padding:30px;
+}
+
+@media screen and (max-width:1000px){
+    .home{
+        padding:0px;
+        margin:0px;
+    }
+    .home_section{
+        grid-template-columns: 1fr 1fr;
+
+    }
+
 }
