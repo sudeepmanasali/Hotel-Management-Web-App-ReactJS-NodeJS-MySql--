@@ -12,6 +12,11 @@
     box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
+  @media screen and (max-width:760px){
+    .header_center{
+        display:none;
+    }   
+}
 
   /* Full-width input fields */
   .container-fluid input[type=text], input[type=password] {

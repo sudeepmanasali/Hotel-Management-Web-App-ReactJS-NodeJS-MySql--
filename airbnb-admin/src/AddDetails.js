@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import axios from "axios"
 import "./adddetails.css"
 import ProgressBar from 'react-bootstrap/ProgressBar'
-
+import {ToastsContainer, ToastsStore,ToastsContainerPosition} from 'react-toasts';
 function AddDetails() {
     var [price , setPrice]=useState('')
     var [roomType , setRoomType]=useState('')
@@ -30,8 +30,8 @@ var [uploadPercentage,setPercent] = useState(0);
   });
    setFacility('')
    setPrice('')
+   ToastsStore.success(`New Facility added successfully `); 
 
-  alert(request.data)
 }
 
 
@@ -64,19 +64,17 @@ var uploadFile = ({target : { files }})=>{
         console.log(res.data.profile_url)
         setRoomImage(res.data.profile_url)
         setPercent(100)
-        // setAvatar(res.data.url) 
         setTimeout(()=>{setPercent(0)},2000)
+        ToastsStore.success(`Uploaded Successfully `); 
 
     })
+
 }
 
 useEffect(()=>{
     async function fetchFacility(){
         var request = await axios.get(fetchRoomfacilities);
-    //    console.log(request.data);
        setFacilityDetails(request.data)
-    
-    
     }
         
              fetchFacility();
@@ -91,16 +89,15 @@ async function addnewroom(){
         hotelid:1,statusid:2
 
     });
-
-    
-  alert(request.data)
-   
+    ToastsStore.success(`Roon Added Successfully ${request.data}`); 
 }
 
 
 
     return (
         <div className="container">
+         <ToastsContainer store={ToastsStore} position={ToastsContainerPosition.TOP_CENTER} />
+
               <h4 style={{"textDecoration":"underline"}}>Add New Facility </h4>
               <br></br>
             <div className="add" style={{"marginTop":"15px"}}>
@@ -112,8 +109,6 @@ async function addnewroom(){
                 <input type="text" className="p_input"  value={price} onChange={(e)=>{setPrice(e.target.value)}}/>
                         
                 <button style={{"backgroundColor":"#392F5A","color":"white","padding":"3px 15px","marginLeft":"10px"}} onClick={addfacility} > Add</button>
-                    
-
             </div>
         <br/>
    

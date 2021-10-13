@@ -11,7 +11,7 @@
 }
 .header_icon{
     object-fit:contain;
-    height:60px;
+    height:80px;
     margin-left: 20px;
 }
 
@@ -62,8 +62,8 @@
     flex-direction:row;
     align-items:center;
     justify-content: space-between;
-    width:21vw;
-    margin-right:80px;
+    /* width:21vw; */
+    margin-right:8px;
   
 }
 
@@ -72,6 +72,7 @@
     align-items: center;
     flex-direction:column ;
     justify-content: space-evenly;
+    margin:0 5px;
 }
 
 .item:hover{
@@ -81,4 +82,9 @@
     font-size:14px;
     font-weight:600;
 
+}
+
+@media screen and (max-width:1200px){
+    .header_center{display: none;}
+    
 }

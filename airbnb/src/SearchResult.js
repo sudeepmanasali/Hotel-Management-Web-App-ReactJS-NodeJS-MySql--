@@ -16,6 +16,7 @@ import axios from "axios"
 import { useHistory } from 'react-router-dom';
 
 import { useStateValue } from './StateProvider';
+import { actionTypes } from './reducer';
 function SearchResult({
     img,
     location,
@@ -31,13 +32,13 @@ function SearchResult({
 
 }) {
 
-    const [{token}] = useStateValue();
+    const [{token},dispatch] = useStateValue();
     
 var history = useHistory()
   
 
     var booknow = (e)=>{
-        var res = window.confirm("Book the hotel");
+        // var res = window.confirm("Book the hotel");
         var book = {
             "roomId":e.target.id,
             "custId":custId,
@@ -51,38 +52,55 @@ var history = useHistory()
             var d =new Date(date);
             return (d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate() )
         }
+        var today = formatDate(Date())
      
+        dispatch({
+            type:actionTypes.BOOK_HOTEL,
 
-        
-        var today = formatDate(Date()) 
-        
-      if(res){
-
-        axios.post("http://localhost:8000/reservation",{
-            data:{"roomId":parseInt(e.target.id),
+            currentBooking:  {
+            "img":img,    
+            "title":title,
+            "desc":description,
+            "roomId":parseInt(e.target.id),
             "custId":custId,
             "bookingDate":today,
             "startDate":formatDate(startDate),
             "endDate":formatDate(endDate),
             "amount":price}
-        },{headers:{
-            Authorization:"Bearer "+token
-        }})
-        .then(result=>{
-            
-            alert(result.data)
-
-            history.push("/")
-            
         })
-        .catch(err=>{
-            alert(err);
-        })
+        
 
-      }
-      else{
-          console.log("Booking Cancelled !!!")
-      }
+        history.push("/checkout");        
+
+
+
+    //   if(res){
+
+    //     axios.post("http://localhost:8000/reservation",{
+    //         data:{"roomId":parseInt(e.target.id),
+    //         "custId":custId,
+    //         "bookingDate":today,
+    //         "startDate":formatDate(startDate),
+    //         "endDate":formatDate(endDate),
+    //         "amount":price}
+    //     },{headers:{
+    //         Authorization:"Bearer "+token
+    //     }})
+    //     .then(result=>{
+            
+    //         alert(result.data)
+
+    //         history.push("/")
+            
+    //     })
+    //     .catch(err=>{
+    //         alert(err);
+    //     })
+
+    //   }
+    //   else{
+    //       console.log("Booking Cancelled !!!")
+    //   }
         
     }
 
@@ -92,7 +110,7 @@ var history = useHistory()
       
          <div className="searchResult">
            <img src={img} />
-           <BsBookmarksFill  className="searchResult_heart" style={{color:"red"}} />
+           <BsBookmarksFill  className="searchResult_heart" style={{color:"red",float:"right"}} />
            <div className="searchResult_info">
                <div className="searchResult_infoTop">
                <h3><strong>{title}</strong></h3>
@@ -131,8 +149,12 @@ var history = useHistory()
                         <button id={roomId} style={{padding:"10px 12px", outline:"none",fontWeight:"600",background:"rgb(230, 30, 77) 0%",border:"none",borderRadius:"55px",color:"white"}} onClick={booknow}>Book Now</button>
                     </div>
                     <div className="searchResult_price">
-                        <h3><FaRupeeSign />{total}/ night + gst  <FaRupeeSign /> {total*0.01*18}</h3>
-                        <p style={{fontSize:"15px",color:"rgb(113, 113, 113)",textDecoration:"underline"}}><FaRupeeSign style={{fontSize:"15px !important" }} /> {price+price*0.01*18} total </p>
+                        <p><FaRupeeSign />{total}/ night + gst  <FaRupeeSign /> {total*0.01*18}</p>
+                        {/* <p ><FaRupeeSign style={{fontSize:"15px !important" }} /> {price+price*0.01*18} total </p> */}
+                    </div>
+                    <div className="searchResult_price">
+                  
+                        <p ><FaRupeeSign style={{fontSize:"15px !important" }} /> {price+price*0.01*18} total </p>
                     </div>
                </div>
            </div>

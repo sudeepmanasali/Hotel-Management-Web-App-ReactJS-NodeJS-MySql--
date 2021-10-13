@@ -34,9 +34,7 @@ function EditRoomPrice() {
                     <h2 style={{textAlign:"center",fontSize:"16px",borderBottom:"2px sollid lightgrey",marginBottom:"10px"}}>Edit Hotel</h2>
                  
                  <label className="label" style={{paddingLeft:"0px"}}>{item.type_name} </label>
-                 {/* <input type="text" className="p_input" placeholder={item.key} onChange={(e)=>{setEditCost(e.target.value)}}/>
-              */}
-         
+           
         </div>
                ))
              }

@@ -1,0 +1,20 @@
+.loginContainer{
+    margin:5% auto;
+}
+.login{
+    width:500px;
+    margin:0% auto;
+    display: grid;
+
+    grid-template-columns: 1fr;
+    padding:10px 20px;
+}
+
+@media screen and (max-width:1000px){
+    .loginContainer{
+        margin:20% auto;
+    }
+    .login{
+        width:60%;
+    }
+}

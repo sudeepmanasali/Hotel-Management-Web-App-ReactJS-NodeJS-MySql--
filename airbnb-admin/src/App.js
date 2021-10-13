@@ -1,21 +1,20 @@
-import React from 'react';
+import React,{Suspense} from 'react';
 import Footer from './Footer';
 import Header from './Header';
-
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-
 import AdminRegister from "./AdminRegister";
-import Hoteldetails from "./Hoteldetails";
-
-// import AdminHeader from "./AdminHeader";
 import AdminLogin from "./AdminLogin";
-
+import Reloader from "./Reloader"
 import { useStateValue } from './StateProvider';
-import Home from './Home';
-import Bookings from "./Bookings"
-import Edithotel from "./Edithotel"
-import EditRoomPrice from './EditRoomPrice';
-import AddDetails from "./AddDetails"
+import "./Bookings.css"
+
+
+const Edithotel = React.lazy(()=>import('./Edithotel'));
+const AddDetails = React.lazy(()=>import('./AddDetails'));
+const Home = React.lazy(()=>import('./Home'));
+const Bookings = React.lazy(()=>import('./Bookings'));
+const EditRoomPrice = React.lazy(()=>import('./EditRoomPrice'));
+const Hoteldetails = React.lazy(()=>import('./Hoteldetails'));
 
 function App() {
   const [{admin}, dispatch] = useStateValue();
@@ -24,72 +23,37 @@ function App() {
   return (
     <div className="app">
 
-   {
+
+    <Router>
+      <Suspense fallback={Reloader}>
+    {
      !(admin) ? 
      <AdminLogin /> 
      :
    
-    <Router>
-
    
         <Switch>
-        
-       
+          <Route path="/edithotel"><Edithotel /></Route>
 
-          <Route path="/adminregister">
-            
-              <AdminRegister />
-           
-          </Route>
-
-    
-
-          <Route path="/edithotel">
-            
-              <Edithotel />
-           
-          </Route>
-
-          <Route path="/bookings">
-            <Header />
-              <Bookings />
-           <Footer />
-          </Route>
+          <Route path="/bookings"> <Header /> <Bookings /> <Footer /></Route>
 
 
-          <Route path="/addDetails">
-            <Header />
-              <AddDetails />
-           <Footer />
-          </Route>
+          <Route path="/addDetails"><Header /><AddDetails /><Footer /></Route>
 
          
-          <Route path="/hotel_details">
-            <Header />
-              <Hoteldetails/>
-           <Footer />
-          </Route>
+          <Route path="/hotel_details"><Header /><Hoteldetails/><Footer /></Route>
 
-          <Route path="/adminlogin">
-            
-            <AdminLogin />
-         
-        </Route>
+          <Route path="/adminlogin"><AdminLogin /></Route>
 
-        <Route path="/">
-            <Header />
-            <Home />
-          <Footer />
-        </Route>
-
- 
-
-    
+        <Route path="/" exact><Header /><Home /><Footer /></Route>    
         </Switch>
-      
+}
+</Suspense>
+<Route path="/adminregister"><AdminRegister /></Route>
+
     </Router>
 
-   }
+ 
     
     </div>
   );

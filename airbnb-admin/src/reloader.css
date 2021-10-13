@@ -1,0 +1,24 @@
+
+.reloader{
+    padding:3px;
+    object-fit: contain;
+    border:5px solid #fc8019;
+    border-right:none;
+    width:100px ;
+    width:100px;
+    border-radius: 50%;
+    position:absolute;
+    top:50%;
+    left:45%;
+    animation: mymove 2s  infinite;
+   
+}
+
+@keyframes mymove {
+    100% {transform: rotate(360deg);}
+  }
+.reloader_image{
+    width:100px ;
+    width:100px;
+    border-radius: 50%;
+}

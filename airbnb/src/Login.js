@@ -19,7 +19,8 @@ function Login() {
   var history = useHistory();
 
         function login_in(){
-            axios.get(`http://localhost:8000/login/${email}/${password}`)
+            if(email.trim()!==" "&& password.trim()!==" "){
+                axios.get(`http://localhost:8000/login/${email}/${password}`)
             .then(res=>{
                 
                 localStorage.setItem('token', res.data.token);
@@ -49,8 +50,14 @@ function Login() {
             })
             .catch(err=>{
                 console.log(err);
-                // alert(err.response.data);
+               
             });
+
+            }
+            else{
+                alert("Enter the valid credentials..");
+            }
+            
 
 
             }

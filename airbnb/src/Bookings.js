@@ -23,9 +23,10 @@ function Bookings() {
     async function cancelReservation(e){
         var d = e.target.id.split(',')
         var cancelresUrl=`http://localhost:8000/cancelReserve/${d[0]}`;
-        axios.delete(cancelresUrl,{
-            data:{
-                isAuth:isAuth
+        axios.delete(cancelresUrl,
+        {   
+            headers:{
+                Authorization:"Bearer "+token
             }
         }
         )

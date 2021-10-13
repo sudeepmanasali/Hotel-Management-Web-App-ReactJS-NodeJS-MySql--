@@ -4,13 +4,16 @@ export const initialState = {
     user:localStorage.getItem('userId'),
     token:localStorage.getItem("token"),
     user_details:JSON.parse(localStorage.getItem("details")),
-    isAuth : localStorage.getItem('isAuth')
+    isAuth : localStorage.getItem('isAuth'),
+    currentBooking:null
 }
 
 export const actionTypes = {
     SET_USER: "SET_USER",
     LOGOUT:"LOGOUT",
-    USER_INFO: "USER_INFO"
+    USER_INFO: "USER_INFO",
+    BOOK_HOTEL: "BOOK_HOTEL",
+
 };
 
 const reducer = (state, action) => {
@@ -34,7 +37,14 @@ const reducer = (state, action) => {
                 return{
                     ...state,
                     user_details:action.user_details,
-                };    
+                };  
+        
+                case actionTypes.BOOK_HOTEL:
+                    console.log(action);
+                    return{
+                        ...state,
+                        currentBooking:action.currentBooking,
+                    };         
 
 
         default: 

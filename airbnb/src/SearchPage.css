@@ -98,3 +98,21 @@ margin-right:10px;
 .main_content{
     flex-basis: 75%;
 }
+
+
+@media screen and (max-width:1040px){
+    .contents{
+        flex-direction: column;
+    }
+    .search_categories{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .name2{
+        font-size: 13px;
+        padding:4px 10px;
+        border-radius: 500px;
+        font-weight:500 ;
+    }
+
+}

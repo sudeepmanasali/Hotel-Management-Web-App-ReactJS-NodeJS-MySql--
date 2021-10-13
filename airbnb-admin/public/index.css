@@ -1,0 +1,5 @@
+@media screen and (max-width:760px){
+    .header_center{
+        display:none;
+    }   
+}

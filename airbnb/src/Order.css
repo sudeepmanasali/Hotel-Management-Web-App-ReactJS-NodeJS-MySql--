@@ -1,0 +1,72 @@
+.checkout{
+    margin:20px auto;
+    width:70%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    border:1px solid rgba(211,211,211);
+    padding:10px 15px;
+}
+
+.paymentDetails_top{
+    line-height: 5px;
+    /* color:rgba(211,211,211); */
+    font-size: 15px;
+    font-weight: 600;
+    /* margin:5px 0px ; */
+    padding: 8px 0px;
+ 
+}
+
+.cardInput > .cardNum{
+    width:90%;
+}
+.title{
+    font-size: 25px;
+    margin :10px 0px;
+}
+
+.paymentContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding:10px 20px;
+    /* grid-template-rows:1fr 1fr  ; */
+}
+.confirm_button{
+    background-color: crimson;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    padding:10px 25px;
+    border:none;
+    outline:none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+span{
+    color:cornflowerblue;
+    font-weight: 600;
+}
+
+.cancellation .cancel{
+    padding:10px 0px;
+    padding-bottom: 15px;
+}
+
+.cardInput input{
+    width:50%;
+}
+
+@media screen and (max-width:1040px){
+    .checkout{
+        grid-template-columns: 1.5fr;
+        width:85%;
+    }
+
+    .paymentContent{
+        padding:5px 10px;
+    }
+    .hotelInfo{
+        grid-column: 1;
+    }
+}

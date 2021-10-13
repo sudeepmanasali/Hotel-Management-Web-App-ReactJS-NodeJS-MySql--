@@ -29,9 +29,7 @@ function Edithotel() {
           
           async function fetchData(){
               var request = await axios.get(fetchUrl);
-    
-       
-             console.log(request.data)
+
               setHotelDetails(request.data)
 
               setEditEmail(request.data.hotel_email)      
@@ -40,25 +38,15 @@ function Edithotel() {
   
                setEditPhone(request.data.hotel_phone)
   
-          
-          
-
-  
-          
         }
           fetchData();
         },[fetchUrl]);   
-
-          
-
-    console.log(hotel_details)
  
   
 
     var editUrl = `http://localhost:8000/edithotel`
 
      async function edit(){
-        // setDisable(!disable);
         console.log([edit_name,edit_email,edit_phone,edit_addr])
         var request = await axios.put(editUrl,{
         
@@ -66,15 +54,9 @@ function Edithotel() {
             "hotelemail":edit_email,
             "phone":edit_phone,
            "addr":edit_addr,
-      
-
           
         });
-      
           alert(request.data)
-         
-       
-       
     }
     return (
 
@@ -85,7 +67,7 @@ function Edithotel() {
        
              {
                hotel_details.map((item)=>(
-           <form method="post" action="" enctype="multipart/form-data">
+           <form >
                     <h2 style={{textAlign:"center",fontSize:"16px",borderBottom:"2px sollid lightgrey",marginBottom:"10px"}}>Edit Hotel</h2>
                  
                  <label className="label" style={{paddingLeft:"0px"}}><FaHotel /> HotelName</label>
